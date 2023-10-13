@@ -4,9 +4,9 @@ const locators = require('../locators');
 const chalk = require('chalk');
 const hf = require('../helpfunction.js');
 
-async function runTestCase5(driver) {
+async function runTestCase5(options) {
     console.log(chalk.green("5 Test Started: Checking validations with random data (50 cycles)"));
-    driver = await new Builder().forBrowser('chrome').build();
+    driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
 
     async function clearField(field) {
         //Очистка полей которая работает
@@ -40,11 +40,11 @@ async function runTestCase5(driver) {
             let isButtonEnabled = await driver.findElement(locators.buttonReg).isEnabled();
             assert(isButtonEnabled);
 
-            
+           
 
             //await driver.sleep(1000);
         }
-
+        console.log(chalk.cyan('Test Passed'));
     } catch (error) {
         console.error(chalk.red('Test Failed:', error.message));
         try { console.error(chalk.red("Username:", await driver.findElement(locators.loginInputReg).getAttribute('value'))); } catch(e) {}

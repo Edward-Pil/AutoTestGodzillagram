@@ -3,9 +3,9 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 const locators = require('../locators');
 const chalk = require('chalk');
 
-async function runTestCase1(driver) {
+async function runTestCase1(options) {
   console.log(chalk.green("1 Test Started: Checking 'empty fields' error messages when no data provided"));
-  driver = await new Builder().forBrowser('chrome').build();
+  driver = await new Builder().forBrowser('chrome') .setChromeOptions(options).build();
 
   try {
     await driver.get('https://godzilla-front.vercel.app/auth');

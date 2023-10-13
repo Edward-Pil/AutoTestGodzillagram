@@ -24,11 +24,11 @@ async function runTestSuite() {
             .setChromeOptions(options);
 
         console.log(chalk.magenta('Start Tests'));
-        await runTestCase1(driver);
-        await runTestCase2(driver);
-        await runTestCase3(driver);
-        await runTestCase4(driver);
-        await runTestCase5(driver);
+        await runTestCase1(options);
+        await runTestCase2(options);
+        await runTestCase3(options);
+        await runTestCase4(options);
+        await runTestCase5(options);
         console.log(chalk.magenta('All Tests Passed'));
         //await driver.quit();
     } catch (error) {

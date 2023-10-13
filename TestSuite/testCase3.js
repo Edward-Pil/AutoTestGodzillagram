@@ -3,9 +3,9 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 const locators = require('../locators');
 const chalk = require('chalk');
 
-async function runTestCase3(driver) {
+async function runTestCase3(options) {
     console.log(chalk.green("3 Test Started: Сhecking error messages for length and invalid characters"));
-    driver = await new Builder().forBrowser('chrome').build();
+    driver = await new Builder().forBrowser('chrome') .setChromeOptions(options).build();
 
     try {
         await driver.get('https://godzilla-front.vercel.app/auth');

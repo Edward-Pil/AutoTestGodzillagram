@@ -3,9 +3,9 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 const locators = require('../locators');
 const chalk = require('chalk');
 
-async function runTestCase4(driver) {
+async function runTestCase4(options) {
     console.log(chalk.green("4 Test Started: Сhecking error messages for existing users and email"));
-    driver = await new Builder().forBrowser('chrome').build();
+    driver = await new Builder().forBrowser('chrome') .setChromeOptions(options).build();
 
     try {
         await driver.get('https://godzilla-front.vercel.app/auth');
@@ -24,7 +24,8 @@ async function runTestCase4(driver) {
         //Проверка текста ошибок.
         assert.strictEqual(await driver.findElement(locators.loginErrorReg).getText(), 'User with this username is already registered');
         assert.strictEqual(await driver.findElement(locators.emailErrorReg).getText(), 'User with this email is already registered'); 
-       
+
+        console.log(chalk.cyan('Test Passed'));
     } catch (error) {
         console.error(chalk.red('Test Failed:', error.message));
     } finally {
