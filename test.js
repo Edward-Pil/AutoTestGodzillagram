@@ -7,6 +7,9 @@ const runTestCase2 = require('./TestSuite/testCase2.js');
 const runTestCase3 = require('./TestSuite/testCase3.js');
 const runTestCase4 = require('./TestSuite/testCase4.js');
 const runTestCase5 = require('./TestSuite/testCase5.js');
+const runTestCase6 = require('./TestSuite/testCase6.js');
+const runTestCase7 = require('./TestSuite/testCase7.js');
+const runTestCase8 = require('./TestSuite/testCase8.js');
 
 async function runTestSuite() {
 
@@ -24,11 +27,16 @@ async function runTestSuite() {
             .setChromeOptions(options);
 
         console.log(chalk.magenta('Start Tests'));
-        await runTestCase1(options);
-        await runTestCase2(options);
-        await runTestCase3(options);
-        await runTestCase4(options);
-        await runTestCase5(options);
+        //Регистарция
+        // await runTestCase1(options);
+        // await runTestCase2(options);
+        // await runTestCase3(options);
+        // await runTestCase4(options);
+        // await runTestCase5(options);
+        // //Логиинзация
+        // await runTestCase6(options);
+        // await runTestCase7(options);
+        await runTestCase8(options);
         console.log(chalk.magenta('All Tests Passed'));
         //await driver.quit();
     } catch (error) {

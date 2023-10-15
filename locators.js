@@ -18,7 +18,17 @@ const locators = {
     passwordErrorReg: By.xpath("(//div[@class='input_errorContainer__BXmUh'])[3]"), 
     confirmationErrorReg: By.xpath("(//div[@class='input_errorContainer__BXmUh'])[4]"),
     //Кнопка регистрации
-    buttonReg: By.xpath("//button[@class='button_primary__TtywJ button_fullWidth__KGFOv registration-form_btnSingUp__rxmw5']")
+    buttonReg: By.xpath("//button[@class='button_primary__TtywJ button_fullWidth__KGFOv registration-form_btnSingUp__rxmw5']"),
+
+    //Логинизация
+    //Поля ввода
+    emailInputLog: By.xpath("//input[@autocomplete='email']"),
+    passwordInputLog: By.xpath("//input[@autocomplete='current-password']"),
+    //Ошибки логина
+    emailErrorLog: By.xpath("//div[@class='input_main__qIW6i'][1]//div//p"),
+    passwordErrorLog: By.xpath("//div[@class='input_main__qIW6i'][2]//div//p"),
+    //Кнопка логина
+    buttonLog: By.xpath("//button[@class='button_primary__TtywJ button_fullWidth__KGFOv login-form_btnSingUp__bdZqw']"),
   }
   
   module.exports = locators;

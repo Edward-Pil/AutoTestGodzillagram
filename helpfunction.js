@@ -53,10 +53,19 @@ function generateRandomUsername(length) {
     }
   return result;
   }
+  //неработает вызов в функцию
+  const locators = require('./locators');
+  async function clearField(field) {
+    //Очистка полей которая работает
+    await driver.findElement(field).sendKeys(Key.CONTROL + "a");
+    await driver.findElement(field).sendKeys(Key.BACK_SPACE);
+    //await driver.sleep(500);
+}
 
 module.exports = {
   getRandomNumber,
   generateRandomPassword,
   generateRandomEmail,
-  generateRandomUsername
+  generateRandomUsername,
+  clearField
 };

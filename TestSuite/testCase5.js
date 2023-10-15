@@ -7,7 +7,7 @@ const hf = require('../helpfunction.js');
 async function runTestCase5(options) {
     console.log(chalk.green("5 Test Started: Checking validations with random data (50 cycles)"));
     driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
-
+    
     async function clearField(field) {
         //Очистка полей которая работает
         await driver.findElement(field).sendKeys(Key.CONTROL + "a");
